@@ -1,0 +1,27 @@
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+
+
+.th,.td {
+  border: 1px solid #252525;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #fff; /* Белый фон для нечетных строк */
+}
+
+.table tr:nth-child(even) {
+  background-color: #e4e3e3; /* Серый фон для четных строк */
+}
+.skeleton{
+border: 1px solid #252525;
+}
+.skeletonTd{
+    height: 100px;
+    text-align: center;
+}
