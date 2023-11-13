@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 import s from "./Form.module.scss";
 
 function Form({ setData }) {
@@ -32,6 +33,16 @@ function Form({ setData }) {
 
   function handlerSubmit(e) {
     e.preventDefault();
+
+    if (
+      domain.trim() === "" ||
+      ipAdress.trim() === "" ||
+      arrayWords === ""
+    ) {
+      Notify.failure(`Fill in the fields before adding`);
+      return;
+    }
+
     const data = {
       domain: domain,
       ipAdress: ipAdress,
@@ -42,43 +53,47 @@ function Form({ setData }) {
   }
 
   return (
-    <form
-      onSubmit={(e) => handlerSubmit(e)}
-      className={s.form}
-    >
-      <label className={s.label}>
-        {" "}
-        domain
-        <input
-          className={s.input}
-          name="domain"
-          type="text"
-          value={domain}
-          onChange={handlerChange}
-        />
-      </label>
-      <label className={s.label}>
-        Ip
-        <input
-          className={s.input}
-          name="ipAdress"
-          value={ipAdress}
-          type="text"
-          onChange={handlerChange}
-        />
-      </label>
-      <label className={s.label}>
-        asdasd
-        <input
-          className={s.input}
-          name="words"
-          value={words}
-          type="text"
-          onChange={handlerChange}
-        />
-      </label>
-      <button>Submit</button>
-    </form>
+    <>
+      <form
+        onSubmit={(e) => handlerSubmit(e)}
+        className={s.form}
+      >
+        <label className={s.label}>
+          <p>Domain</p>
+          <input
+            className={s.input}
+            name="domain"
+            type="text"
+            placeholder="example: google.com"
+            value={domain}
+            onChange={handlerChange}
+          />
+        </label>
+        <label className={s.label}>
+          <p>Ip</p>
+          <input
+            className={s.input}
+            name="ipAdress"
+            placeholder="127.00.00.7"
+            value={ipAdress}
+            type="text"
+            onChange={handlerChange}
+          />
+        </label>
+        <label className={s.label}>
+          <p>Your words (only space)</p>
+          <input
+            className={s.input}
+            name="words"
+            value={words}
+            placeholder="first two three four"
+            type="text"
+            onChange={handlerChange}
+          />
+        </label>
+        <button className={`${s.btn} ${s.btnSubmit}`}>Submit</button>
+      </form>
+    </>
   );
 }
 
