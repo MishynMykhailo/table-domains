@@ -5,9 +5,7 @@ import s from "./Form.module.scss";
 function Form({ setData }) {
   const [domain, setDomain] = useState("");
   const [ipAdress, setIpAdress] = useState("");
-  const [words, setWords] = useState(
-    "bond manufacturer carve memorial complex stereotype racism patrol assignment profound"
-  );
+  const [words, setWords] = useState("");
   const [arrayWords, setArrayWords] = useState([]);
   useEffect(() => {
     setArrayWords(() => {
@@ -34,11 +32,7 @@ function Form({ setData }) {
   function handlerSubmit(e) {
     e.preventDefault();
 
-    if (
-      domain.trim() === "" ||
-      ipAdress.trim() === "" ||
-      arrayWords === ""
-    ) {
+    if (domain.trim() === "" || ipAdress.trim() === "" || arrayWords === "") {
       Notify.failure(`Fill in the fields before adding`);
       return;
     }
