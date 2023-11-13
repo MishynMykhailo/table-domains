@@ -11,6 +11,9 @@ code {
     monospace;
 }
 
+*{
+  box-sizing: border-box;
+}
 p,
 h1,
 h2,
@@ -20,7 +23,10 @@ h5,
 h6 {
   margin: 0;
 }
-
+textarea{
+  padding: 0;
+  margin: 0;
+}
 ul {
   margin: 0;
   padding: 0;
