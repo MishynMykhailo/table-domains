@@ -18,8 +18,8 @@ function Table({ data }) {
     element.style.display = "none";
     document.body.appendChild(element);
     element.click();
-      document.body.removeChild(element);
-      Notify.success("Downloaded file")
+    document.body.removeChild(element);
+    Notify.success("Downloaded file");
   };
   function getSubdomain() {
     if (arrayWords && domain) {
@@ -48,7 +48,7 @@ function Table({ data }) {
   return (
     <>
       <div className={s.copyBlock}>
-        <h3>Array your subdomain</h3>
+        <h3 className={s.h3}>Array your subdomain</h3>
         <textarea
           value={getSubdomain()}
           className={s.textarea}
@@ -62,12 +62,18 @@ function Table({ data }) {
           Copy all
         </button>
       </div>
-      <button onClick={exportToTxt} className={`${s.btn} ${s.btnExport}`}>Export to TXT</button>
+      <button
+        disabled={!getSubdomain().length > 0 ? true : false}
+        onClick={exportToTxt}
+        className={`${s.btn} ${s.btnExport}`}
+      >
+        Export to TXT
+      </button>
 
       {
         <table className={s.table}>
           <thead>
-            <tr>
+            <tr className={s.tableHead}>
               <th className={s.th}>Words</th>
               <th className={s.th}>Domain</th>
               <th className={s.th}>IP</th>
