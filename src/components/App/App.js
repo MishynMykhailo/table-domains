@@ -5,6 +5,7 @@ import Form from "../Form/Form";
 import Table from "../Table/Table";
 
 function App() {
+  
   const [dataArray, setDataArray] = useState([]);
 
   return (
