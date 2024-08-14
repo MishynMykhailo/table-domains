@@ -1,13 +1,13 @@
 import React from "react";
-import s from "./Table.module.scss";
+import s from "./TableIpv6.module.scss";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
-function Table({ data }) {
+function TableIpv6({ data }) {
   const { arrayWords, domain, ipAdress } = data;
 
   const exportToTxt = () => {
     let txtContent = arrayWords
-      .map((word) => `${word}.${domain}. 1 IN A ${ipAdress}`)
+      .map((word) => `${word}.${domain}. 1 IN AAAA ${ipAdress}`)
       .join("\n");
     const element = document.createElement("a");
     element.setAttribute(
@@ -94,10 +94,7 @@ function Table({ data }) {
                 );
               })
             ) : (
-              <tr
-                key="skeleton"
-                className={s.skeleton}
-              >
+              <tr key="skeleton" className={s.skeleton}>
                 <td className={s.skeletonTd}> </td>
                 <td className={s.skeletonTd}>Not Found</td>
                 <td className={s.skeletonTd}> </td>
@@ -110,4 +107,4 @@ function Table({ data }) {
   );
 }
 
-export default Table;
+export default TableIpv6;

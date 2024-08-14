@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-import s from "./Form.module.scss";
+import s from "./FormIpv6.module.scss";
 
-function Form({ setData }) {
+function FormIpv6({ setData }) {
   const [domain, setDomain] = useState("");
   const [ipAdress, setIpAdress] = useState("");
   const [words, setWords] = useState("");
@@ -48,10 +48,8 @@ function Form({ setData }) {
 
   return (
     <>
-      <form
-        onSubmit={(e) => handlerSubmit(e)}
-        className={s.form}
-      >
+      <form onSubmit={(e) => handlerSubmit(e)} className={s.form}>
+        <h2 className={s.title}>Ipv6</h2>
         <label className={s.label}>
           <p>Domain</p>
           <input
@@ -68,7 +66,7 @@ function Form({ setData }) {
           <input
             className={s.input}
             name="ipAdress"
-            placeholder="127.00.00.7"
+            placeholder="2001:0000:130F:0000:0000:09C0:876A:130B"
             value={ipAdress}
             type="text"
             onChange={handlerChange}
@@ -91,4 +89,4 @@ function Form({ setData }) {
   );
 }
 
-export default Form;
+export default FormIpv6;

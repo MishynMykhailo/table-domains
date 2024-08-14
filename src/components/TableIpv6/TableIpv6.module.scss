@@ -1,0 +1,93 @@
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+.h3 {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.th,
+.td {
+  padding: 10px;
+  text-align: left;
+  overflow-x: scroll;
+  font-size: 11px;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #fff; /* Белый фон для нечетных строк */
+}
+
+.table tr:nth-child(even) {
+  background-color: #e4e3e3; /* Серый фон для четных строк */
+}
+.skeleton {
+}
+.skeletonTd {
+  height: 100%;
+  text-align: center;
+}
+.textarea {
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  outline: none;
+}
+.copyBlock {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  border: none;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+.btnCopy {
+  max-width: 100px;
+  padding: 10px;
+  margin-left: auto;
+  color: white;
+  border-radius: 10px;
+  background: rgb(5, 181, 128);
+  outline: none;
+  transition: 250ms all ease;
+  &:hover,
+  &:focus {
+    background: rgb(4, 150, 106);
+  }
+}
+.btnCopy:disabled {
+  opacity: 0.7;
+  color: gray;
+  background-color: rgb(5, 181, 128);
+}
+.btnExport {
+  padding: 10px;
+  background-color: rgb(3, 190, 3);
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 250ms all ease;
+  &:hover,
+  &:focus {
+    background-color: rgb(22, 145, 22);
+  }
+}
+.tableHead {
+  border-bottom: 1px solid #25252525;
+}
+.btnExport:disabled {
+  opacity: 0.7;
+  color: gray;
+  background-color: rgb(9, 85, 9);
+}
